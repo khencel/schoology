@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+body{
+    background-size:cover ;
+    background-repeat: no-repeat;
+    
+}
+
+.success-button{
+    background-image: linear-gradient(to bottom right, rgb(0, 108, 165), rgb(0, 0, 0));
+    color: white !important;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 20px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+.danger-button{
+    background-image: linear-gradient(to bottom right, rgb(170, 221, 249), rgb(0, 0, 0));
+    color: white !important;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 20px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+.default-bg-modal{
+    background-color: transparent !important;
+    backdrop-filter: blur(6px) !important;
+    border: 2px solid white !important;
+    box-shadow: 20px 20px 50px grey !important;
+    border-top-right-radius: 20px !important;
+    border-bottom-left-radius: 20px !important;
+}
+
+.header-1{
+    
+    font-weight: bold !important;
+    font-size: 2em;
+    color: rgb(0, 108, 165);
+}
+
+.header-2{
+    
+    font-weight: bold !important;
+    font-size: 1.5em;
+    color: rgb(0, 108, 165);
+}
+
+.header-3{
+    font-weight: bold !important;
+    font-size: 1.2em;
+    color: rgb(0, 108, 165);
+}
+
+input[type=email],input[type=password]{
+    border-top-right-radius: 10px !important;
+    border-bottom-right-radius: 10px !important;
+    
+}
+
+.icon-text{
+    border-top-left-radius: 10px !important;
+    border-bottom-left-radius: 10px !important;
+    width: 40px;
+}
+
+.font-text{
+    color: rgb(0, 54, 83) !important;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+.nav-link:after{
+    display:block;
+    content: '';
+    border-bottom: solid 3px #019fb6;  
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;
+}
+
+.nav-link:hover:after{
+    transform: scaleX(1);
+}
