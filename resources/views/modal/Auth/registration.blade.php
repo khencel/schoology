@@ -1,8 +1,7 @@
 <!-- Modal -->
-{{-- <form method="POST" action="{{ url('auth/login-user') }}"> --}}
+<form method="POST" action="{{ route('auth.login') }}">
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="false" >
     <div class="modal-dialog modal-dialog-centered">
-        
         @csrf
             <div class="modal-content default-bg-modal">
                 <div class="modal-header" style="border-bottom:none !important">
@@ -18,12 +17,13 @@
                                     <div class="input-group mb-3">
                                         <span class="input-group-text icon-text" id="basic-addon1"><i class="fa-solid fa-envelope"></i></span>
                                         <input id="email" placeholder="Email Address" aria-describedby="basic-addon1" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+        
+                                        @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </div>
-                                </div>
-                                <div class="text-center">
-                                    <span class="text-danger" role="alert">
-                                        <strong id="errorMessageEmail"></strong>
-                                    </span>
                                 </div>
                             </div>
                             
@@ -32,19 +32,13 @@
                                     <div class="input-group mb-3">
                                         <span class="input-group-text icon-text" id="basic-addon2"><i class="fa-solid fa-key"></i></span>
                                         <input id="password" placeholder="Password" aria-describedby="basic-addon2" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                        @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </div>
                                 </div>
-                                <div class="text-center">
-                                    <span class="text-danger" role="alert">
-                                        <strong id="errorMessagePass"></strong>
-                                    </span>
-                                </div>
-                            </div>
-
-                            <div class="text-center">
-                                <span class="text-danger" role="alert">
-                                    <strong id="errorMessageCred"></strong>
-                                </span>
                             </div>
     
                             {{-- <div class="row mb-3 justify-content-center">
@@ -81,12 +75,10 @@
                 
                 <div class="modal-footer" style="border-top:none !important">
                 <button type="button" class="danger-button" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="success-button" onclick="login()">Sign In</button>
+                <button type="submit" class="success-button">Sign In</button>
                 </div>
             </div>
         
     </div>
 </div>
-
-<script src="{{ asset('js/User/Auth.js') }}"></script>
-{{-- </form> --}}
+</form>
