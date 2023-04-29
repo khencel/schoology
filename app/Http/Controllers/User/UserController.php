@@ -15,7 +15,10 @@ class UserController extends Controller
     
         if (\Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return "success";
+            return response([
+                'status' => "success",
+                'user'      =>  \Auth::user()
+            ]);
         }
         return "Opps! You have entered invalid credentials";
     }

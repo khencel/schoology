@@ -10,11 +10,12 @@ function login(){
         type:'POST',
         data:{email:email,password:password},
     }).done(function(res){
-        if(res != "success"){
+        if(res.status != "success"){
             $('#errorMessageEmail').text("")
             $('#errorMessagePass').text("")
             $('#errorMessageCred').text(res);
         }else{
+            
             window.location = "/home";
         }
     }).error(function(e){

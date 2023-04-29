@@ -17,11 +17,14 @@ Route::get('/', function () {
     return view('landingPage');
 });
 
+
+
 Auth::routes();
 require __DIR__ .'/User/Auth.php';
 
 Route::group( ['middleware' => 'auth' ], function()
 {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    require __DIR__ .'/Jurisprudence/Resource.php';
 });
 
