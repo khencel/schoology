@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 @section('content')
 <div class="container-fluid">
     <div class="row justify-content-center">
@@ -16,21 +17,39 @@
                             </button>
                         </div>
                     </div>
-                    <div class="">
-                        <table class="table table-hover">
-                            <thead>
-                                <th>Date</th>
-                                <th>Case Number</th>
-                                <th>Case Title</th>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>test</td>
-                                    <td>test</td>
-                                    <td>test</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="mt-5">
+                        <div>
+                            <table class="table table-hover example" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>Date Case</th>
+                                        <th>Case Number</th>
+                                        <th>Title</th>
+                                        <th>Author</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @forelse ($jurisprudence as $j)
+                                        <tr>
+                                            <td>Tiger Nixon</td>
+                                            <td>{{$j->title}}</td>
+                                            <td>{{$j->case_no}}</td>
+                                            <td>{{$j->author}}</td>
+                                        </tr>
+                                    @empty
+                                        <tr>
+                                            <td>No Record...</td>
+                                        </tr>
+                                    @endforelse
+                                </tbody>  
+                                
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col bg-warning">
+                            {{ $jurisprudence->links() }}
+                        </div>
                     </div>
                     <div class="row justify-content-end mt-5">
                         <div class="col-md-1">
@@ -44,6 +63,7 @@
 </div>
 @include('modal/Jurisprudence/add')
 @endsection
+
 
 
 

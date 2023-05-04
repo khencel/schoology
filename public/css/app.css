@@ -109,3 +109,9 @@ input[type=email],input[type=password]{
     background-repeat: no-repeat !important;
 }
 
+.modal-body{
+    background-image: url('../img/modalBG.webp');
+    background-position: center;
+    background-size: cover;
+}
+

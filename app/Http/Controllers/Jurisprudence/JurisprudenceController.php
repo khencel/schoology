@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 class JurisprudenceController extends Controller
 {
     public function index(){
+        
         return view('page.jurisprudence.index');
     }
 
@@ -17,6 +18,17 @@ class JurisprudenceController extends Controller
     }
 
     public function caseList(){
-        return view('page.jurisprudence.case');
+        $data['jurisprudence'] = (new \App\Services\JurisprudenceServices)->showAll();
+        
+        return view('page.jurisprudence.case',$data);
+    }
+
+    public function store(Request $request){
+        try {
+            (new \App\Services\JurisprudenceServices)->storeData($request->except(['year','month']));
+            return redirect('/jurisprudence/index/month/case?year='.$request->year.'&month='.$request->month);
+        } catch (\Throwable $th) {
+            return $th;
+        }
     }
 }
