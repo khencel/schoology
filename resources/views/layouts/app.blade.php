@@ -486,7 +486,6 @@
         @yield('content')
     </div>
   </section>
-
   <script>
    let sidebar = document.querySelector(".sidebar");
     let sidebarBtn = document.querySelector(".sidebarBtn");
@@ -499,7 +498,6 @@
     }
  </script>
 
-  
 <script type="text/javascript">
         tinymce.init({
         selector: 'textarea.tinymce-editor',
@@ -513,7 +511,6 @@
         content_css: '//www.tiny.cloud/css/codepen.min.css'
     });
 </script>
-
 </body>
 </html>
 

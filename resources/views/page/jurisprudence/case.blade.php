@@ -26,16 +26,25 @@
                                         <th>Case Number</th>
                                         <th>Title</th>
                                         <th>Author</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @forelse ($jurisprudence as $j)
                                         <tr>
-                                            <td>Tiger Nixon</td>
+                                            <td>{{date_format(date_create($j->date_case),"M d, Y")}}</td>
                                             <td>{{$j->title}}</td>
                                             <td>{{$j->case_no}}</td>
                                             <td>{{$j->author}}</td>
+                                            <td>
+                                                <a href="/jurisprudence/show/{{$j->case_no}}">
+                                                    <span role="button">
+                                                        <i class="fa-solid fa-eye"></i>
+                                                    </span>
+                                                </a>
+                                            </td>
                                         </tr>
+                                        
                                     @empty
                                         <tr>
                                             <td>No Record...</td>
@@ -46,8 +55,8 @@
                             </table>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col bg-warning">
+                    <div class="row justify-content-center">
+                        <div class="col-3">
                             {{ $jurisprudence->links() }}
                         </div>
                     </div>
@@ -62,6 +71,7 @@
     </div>
 </div>
 @include('modal/Jurisprudence/add')
+<script src="{{ asset('js/Jurisprudence/add.js') }}"></script>
 @endsection
 
 

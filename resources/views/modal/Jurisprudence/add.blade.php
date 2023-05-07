@@ -7,13 +7,22 @@
                 <h5 class="modal-title" id="exampleModalLabel">Create Case</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body auth-modal-body">
                 <input type="hidden" name="year" value="{{request('year')}}">
                 <input type="hidden" name="month" value="{{request('month')}}">
                 <div class="row">
                     <div class="col-md-6">
                         <label for="title">Title:</label>
                         <input type="text" class="form-control" name="title">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="title">Date Case:</label>
+                        <select name="day" class="form-control">
+                            <option value="">Select Day</option>
+                            @foreach (range(1,31) as $item)
+                                <option value="{{$item}}">{{$item}}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
                 <div class="row mt-2">

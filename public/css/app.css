@@ -13,6 +13,7 @@ body{
     padding: 5px 20px;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
+    min-width: 150px;
 }
 
 .danger-button{
@@ -23,6 +24,8 @@ body{
     padding: 5px 20px;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
+    margin-left: 5px;
+    min-width: 150px;
 }
 
 .default-bg-modal{
@@ -32,6 +35,7 @@ body{
     box-shadow: 20px 20px 50px grey !important;
     border-top-right-radius: 20px !important;
     border-bottom-left-radius: 20px !important;
+    min-width: 150px;
 }
 
 .header-1{
@@ -109,7 +113,7 @@ input[type=email],input[type=password]{
     background-repeat: no-repeat !important;
 }
 
-.modal-body{
+.auth-modal-body{
     background-image: url('../img/modalBG.webp');
     background-position: center;
     background-size: cover;

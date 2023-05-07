@@ -28,3 +28,14 @@ Route::group( ['middleware' => 'auth' ], function()
     require __DIR__ .'/Jurisprudence/Resource.php';
 });
 
+Route::get('/migrate', function() {
+    $output = [];
+    \Artisan::call('migrate', $output);
+    dd($output);
+});
+
+Route::get('/db-seed', function() {
+    $output = [];
+    \Artisan::call('db:seed', $output);
+    dd($output);
+});

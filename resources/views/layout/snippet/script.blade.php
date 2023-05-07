@@ -5,6 +5,8 @@
 <script src="https://cdn.tiny.cloud/1/ehgvwm9op7vmps8th0lo01axyt08l3apuse3gu7imz4i89u8/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 
 
