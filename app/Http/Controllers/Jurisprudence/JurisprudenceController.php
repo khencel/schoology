@@ -42,7 +42,6 @@ class JurisprudenceController extends Controller
     public function update(Request $request,$id){
         $req_data = (new \App\Services\JurisprudenceServices)->showById($id);
         $req_data->update($request->all());
-        // example:
 
         return redirect()->back();
     }

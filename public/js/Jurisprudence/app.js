@@ -14,12 +14,12 @@ var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'A
 $('#btnUpdate').on('click',function(){
     Swal.fire({
         title: 'Are you sure?',
-        text: "You won't be able to revert this!",
+        text: "You want to edit this record!",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!',
+        confirmButtonText: 'Yes, update it!',
         buttonsStyling: false,
         customClass: {
                 confirmButton: "success-button",
@@ -27,8 +27,10 @@ $('#btnUpdate').on('click',function(){
             }
     }).then((result) => {
         if (result.isConfirmed) {
-            
-                $('#submitForm').submit(function() { return false; });
+            window.setInterval(function(){
+                $('#submitForm').submit();
+            },2000)
+                
             
               Toast.fire({
                 icon: 'success',
