@@ -26,6 +26,7 @@ Route::group( ['middleware' => 'auth' ], function()
 {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     require __DIR__ .'/Jurisprudence/Resource.php';
+    require __DIR__ .'/Course/Resource.php';
 });
 
 Route::get('/migrate', function() {
