@@ -20,23 +20,25 @@
                         <div class="row">
                             @forelse ($courses as $c)
                                 <div class="col-md-3 mb-3 box">
-                                    <div class="bg-white p-2" role="button" style="border-radius: 12px">
-                                        <div class="header-3">
-                                            {{$c->course_name}}
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="number">{{number_format(1231)}}</div>
-                                                <div class="indicator">
-                                                    <i class='bx bx-up-arrow-alt'></i>
-                                                    <span class="text">Subject</span>
+                                    <a href="{{ url('/subject/index/'.$c->id) }}">
+                                        <div class="bg-white p-2" role="button" style="border-radius: 12px">
+                                            <div class="header-3">
+                                                {{$c->course_name}}
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="number text-dark">{{number_format(1231)}}</div>
+                                                    <div class="indicator">
+                                                        <i class='bx bx-up-arrow-alt'></i>
+                                                        <span class="text text-dark">Subject</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <i class='bx bxs-graduation cart' ></i>
                                                 </div>
                                             </div>
-                                            <div class="col">
-                                                <i class='bx bxs-graduation cart' ></i>
-                                            </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                             @empty
                                 <div>No Record...</div>

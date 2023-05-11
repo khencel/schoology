@@ -119,3 +119,15 @@ input[type=email],input[type=password]{
     background-size: cover;
 }
 
+a{
+    text-decoration: none !important;
+}
+
+.list-cont{
+    border-radius: 10px;
+   border-style: inset;
+}
+
+
+
+
