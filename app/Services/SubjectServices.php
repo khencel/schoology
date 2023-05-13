@@ -17,7 +17,7 @@ class SubjectServices extends Controller
     }
 
     public function showById($id){
-        
+        return Subject::find($id);
     }
 
     public function showByCourseId($course_id){

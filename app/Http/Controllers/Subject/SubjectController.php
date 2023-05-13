@@ -17,4 +17,15 @@ class SubjectController extends Controller
     public function store(Subject $subject){
         return (new \App\Services\SubjectServices)->storeData($subject->all());
     }
+
+    public function delete($subject_id){
+        $subject = (new \App\Services\SubjectServices)->showById($subject_id);
+        $subject->delete();
+        return $subject->course_id;
+    }
+
+    public function update(Request $request,$subject_id){
+        $subject = (new \App\Services\SubjectServices)->showById($subject_id);
+        return $subject->update($request->all());
+    }
 }

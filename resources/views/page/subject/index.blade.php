@@ -40,13 +40,13 @@
                                         </div>
                                         <div class="col-3 text-end">
                                             <div>
-                                                <i class="fa-solid fa-eye bg-info p-1 w-100" style="border-radius:2px"></i>
+                                                <i class="fa-solid fa-eye bg-info p-1 w-100" onclick="btnView({{$s->id}})" style="border-radius:2px"></i>
                                             </div>
-                                            <div>
+                                            {{-- <div>
                                                 <i class="fa-solid fa-circle-info bg-primary p-1 w-100 text-white" style="border-radius:2px"></i>
-                                            </div>
+                                            </div> --}}
                                             <div>
-                                                <i class="fa-solid fa-trash bg-danger p-1 w-100 text-white" style="border-radius:2px"></i>
+                                                <i class="fa-solid fa-trash bg-danger p-1 w-100 text-white" onclick="btnDelete({{$s->id}})" style="border-radius:2px"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -63,7 +63,12 @@
     </div>
 </div>
 @include('modal/Subject/add')
+@include('modal/Subject/showUpdate')
+<script>
+    var subject = @json($subjects);
+</script>
 <script src="{{ asset('js/Subject/app.js') }}"></script>
+<script src="{{ asset('js/services.js') }}"></script>
 @endsection
 
 
