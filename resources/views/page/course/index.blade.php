@@ -20,8 +20,9 @@
                         <div class="row">
                             @forelse ($courses as $c)
                                 <div class="col-md-3 mb-3 box">
-                                    <a href="{{ url('/subject/index/'.$c->id) }}">
-                                        <div class="bg-white p-2" role="button" style="border-radius: 12px">
+                                    
+                                    <div class="bg-white p-2 m-1 row" role="button" style="border-radius: 12px">
+                                        <div class="col-md-10" style="border-right:1px solid gray;" onclick="selectedCourse({{$c->id}})">
                                             <div class="header-3">
                                                 {{$c->course_name}}
                                             </div>
@@ -31,14 +32,27 @@
                                                     <div class="indicator">
                                                         <i class='bx bx-up-arrow-alt'></i>
                                                         <span class="text text-dark">Subject</span>
-                                                    </div>
+                                                    </div>  
                                                 </div>
                                                 <div class="col">
                                                     <i class='bx bxs-graduation cart' ></i>
                                                 </div>
                                             </div>
                                         </div>
-                                    </a>
+                                        <div class="col-md-2 text-end">
+                                            <div>
+                                                <i class="fa-solid fa-eye bg-info p-1 w-100" onclick="btnView({{$c->id}})"  style="border-radius:2px"></i>
+                                            </div>
+                                            {{-- <div>
+                                                <i class="fa-solid fa-circle-info bg-primary p-1 w-100 text-white"  style="border-radius:2px"></i>
+                                            </div> --}}
+                                            <div>
+                                                <i class="fa-solid fa-trash bg-danger p-1 w-100 text-white" onclick="btnDelete({{$c->id}})" style="border-radius:2px"></i>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    
                                 </div>
                             @empty
                                 <div>No Record...</div>
@@ -52,7 +66,12 @@
     </div>
 </div>
 @include('modal/Course/add')
+@include('modal/Course/showUpdate')
+<script>
+    var course = @json($courses);
+</script>
 <script src="{{ asset('js/Course/app.js') }}"></script>
+<script src="{{ asset('js/services.js') }}"></script>
 @endsection
 
 

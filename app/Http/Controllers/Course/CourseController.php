@@ -16,4 +16,14 @@ class CourseController extends Controller
     public function store(Course $course){
         return (new \App\Services\CourseServices)->storeData($course->toArray());
     }
+
+    public function update(Request $request,$course_id){
+        $course = (new \App\Services\CourseServices)->showById($course_id);
+        return $course->update($request->all());
+    }
+
+    public function delete($course_id){
+        $course = (new \App\Services\CourseServices)->showById($course_id);
+        return $course->delete();
+    }
 }

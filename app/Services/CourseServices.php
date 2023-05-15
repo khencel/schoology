@@ -21,6 +21,6 @@ class CourseServices extends Controller
     }
 
     public function showById($id){
-        
+        return Course::find($id);
     }
 }
