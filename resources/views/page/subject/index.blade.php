@@ -33,10 +33,12 @@
                                 <div class="col-md-3">
                                     <div class="row bg-white list-cont p-3" role="button" style="margin:1px">
                                         <div class="col-9 text-center" style="border-right:1px solid gray;">
-                                            <img src="{{ url('/img/books.png') }}" class="img-fluid" alt="">
-                                            <strong class="font-text">
-                                                {{$s->subject_name}}
-                                            </strong>
+                                            <a href="{{ url('/subject/activity/show/'.$s->id) }}">
+                                                <img src="{{ url('/img/books.png') }}" class="img-fluid" alt="">
+                                                <strong class="font-text">
+                                                    {{$s->subject_name}}
+                                                </strong>
+                                            </a>
                                         </div>
                                         <div class="col-3 text-end">
                                             <div>
