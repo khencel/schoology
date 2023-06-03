@@ -31,6 +31,7 @@
                         </div>
                     </div>
                    <div class="mt-2">
+                    
                         <div class="row">
                             <div class="col">
                                 <table class="table table-hover">
@@ -42,12 +43,13 @@
                                     <tbody>
                                         @forelse ($activity as $a)
                                             <tr>
-                                                <td>title {{$a->title}}</td>
-                                                <td>Item</td>
+                                                <td>{{$a->title}}</td>
+                                                <td>{{count($a->questionnaire)}}</td>
                                                 <td>
-                                                    <a href="{{ url('/subject/activity/add/'.$a->id) }}">
+                                                    {{-- <a href="{{ url('/subject/activity/add/activity_id='.$a->id) }}">
                                                         <span role="button" class="badge bg-info">View</span>
-                                                    </a>
+                                                    </a> --}}
+                                                    <span role="button" class="badge bg-info" onclick="viewQuestionnaire({{$a->id}})">View</span>
                                                     <span role="button" class="badge bg-primary" onclick="editActivity({{$a}})">Edit</span>
                                                 </td>
                                             </tr>

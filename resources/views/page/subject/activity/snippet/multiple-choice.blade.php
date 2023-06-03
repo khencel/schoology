@@ -3,26 +3,30 @@
         <div class="text-end">
             <span class="badge bg-warning">MC</span>
         </div>
+        @php
+            $choices = json_decode($q->choices);
+        @endphp
+        
         <p class="font-text">
-            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus numquam illum magnam placeat ab. Pariatur eligendi qui laborum consequatur distinctio inventore rem nostrum, eaque est quae quod expedita minima ex!</li>
+            <li>{!!$q->question!!}</li>
         </p>
         <ol type="A">
             <div class="row">
                 <div class="col">
-                    <li>Coffee</li>
-                    <li>Tea</li>
+                    <li>{{$choices[0]}}</li>
+                    <li>{{$choices[1]}}</li>
                 </div>
                 <div class="col">
-                    <li>Coffee</li>
-                    <li>Tea</li>
+                    <li>{{$choices[2]}}</li>
+                    <li>{{$choices[3]}}</li>
                 </div>
             </div>
         </ol>
         <p>
-            <span class="font-text">Answer:</span><span>B</span>
+            <span class="font-text">Answer:</span><span>{{$q->answer}}</span>
         </p>
         <div class="text-end">
-            <button class="danger-button">Delete</button>
+            <button class="danger-button" onclick="deletequestion({{$q->id}})">Delete</button>
             <button class="success-button">Edit</button>
         </div>
         <hr>

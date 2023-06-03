@@ -1,4 +1,5 @@
 var activity_id = null;
+var url = window.location.href;
 function btnCreate(subject_id){
     var title = $('#activity_title').val();
     var redirect = "/subject/activity/show/"+subject_id;
@@ -37,4 +38,36 @@ function btnEdit(subject_id){
     }else{
         $("#activity_title_edit_error").text("The activity title field is required.");
     }
+}
+
+function viewQuestionnaire(selected_activity){
+    window.location = "/subject/activity/add/"+selected_activity
+    this.activity_id = selected_activity;
+}
+
+function storeActivity(){
+    storeDataForm('#submitForm');
+}
+
+function selectType(){
+    var type = $("#type_question").val();
+    $('#multiple-choice-cont').addClass('d-none');
+    $('#true-false-cont').addClass('d-none');
+    $('#essay-cont').addClass('d-none');
+
+    if(type == "mc"){
+        $('#multiple-choice-cont').removeClass('d-none');
+    }
+    if(type == "tf"){
+        $('#true-false-cont').removeClass('d-none');
+    }
+    if(type == "essay"){
+        $('#essay-cont').removeClass('d-none');
+    }
+}
+
+function deletequestion(question_id){
+    var url = "/subject/activity/questionnaire/delete/"+question_id
+    var redirect = "";
+    deleteData(url,redirect);
 }

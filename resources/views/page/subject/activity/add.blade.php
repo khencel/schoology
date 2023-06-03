@@ -24,19 +24,30 @@
                             <button type="button" class="danger-button" data-bs-toggle="modal" data-bs-target="#addItem">
                                 Create Item
                             </button>
-                            <button type="button" class="success-button" data-bs-toggle="modal" data-bs-target="#addItem">
-                                Save
-                            </button>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row">                        
                         <div class="col-md-4">
-                            <input type="text" class="form-control" readonly placeholder="Title activity">
+                            
+                            <input type="text" class="form-control" value="{{$activity->title}}" readonly placeholder="Title activity">
                         </div>
                     </div>
+                    
+                    
+                    
                    <div class="mt-5">
                     <ol type="1">
-                        
+                        @foreach ($questionnaire as $q)
+                            @if ($q->question_type == "mc")
+                                @include('/page/subject/activity/snippet/multiple-choice')
+                            @endif
+                            @if ($q->question_type == "tf")
+                                @include('/page/subject/activity/snippet/true-or-false')
+                            @endif
+                            @if ($q->question_type == "essay")
+                                @include('/page/subject/activity/snippet/essay-inumeration')
+                            @endif
+                        @endforeach
                     </ol>
                    </div>
                 </div>

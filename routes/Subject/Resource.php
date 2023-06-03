@@ -16,5 +16,14 @@ Route::prefix('subject')
             Route::get('/add/{subject_id}','ActivityController@add');
             Route::post('/store','ActivityController@store');
             Route::put('/update/{activity_id}','ActivityController@update');
+
+
+            Route::prefix('questionnaire')
+            ->namespace('\App\Http\Controllers\Subject')
+            ->group(function(){
+                Route::get('/index','QuestionController');
+                Route::post('/store','QuestionController@store');
+                Route::get('/delete/{question_id}','QuestionController@delete');
+            });
     });
 });

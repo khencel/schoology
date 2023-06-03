@@ -21,7 +21,7 @@ class ActivityServices extends Controller
     }
 
     public function showBySubjectId($subject_id){
-        return Activity::where('subject_id',$subject_id)->get();
+        return Activity::with('questionnaire')->where('subject_id',$subject_id)->get();
     }
 
 }

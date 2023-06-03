@@ -111,4 +111,34 @@ function storeData(url,data,redirect_page){
     })
 }
 
+function storeDataForm(form_id){
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You want to Create this data?",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, Create it!',
+        buttonsStyling: false,
+        customClass: {
+                confirmButton: "success-button",
+                cancelButton:'danger-button'
+            }
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Toast.fire({
+                icon: 'success',
+                title: 'Update successfully'
+            })
+            window.setInterval(function(){
+                $(form_id).submit();
+            },2000)
+            
+            
+          
+        }
+    })
+}
+
 

@@ -4,14 +4,14 @@
             <span class="badge bg-primary">TF</span>
         </div>
         <p class="font-text">
-            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus numquam illum magnam placeat ab. Pariatur eligendi qui laborum consequatur distinctio inventore rem nostrum, eaque est quae quod expedita minima ex!</li>
+            <li>{!!$q->question!!}</li>
         </p>
         
         <p>
-            <span class="font-text">Answer:</span><span>True</span>
+            <span class="font-text">Answer:</span><span>{{$q->answer}}</span>
         </p>
         <div class="text-end">
-            <button class="danger-button">Delete</button>
+            <button class="danger-button" onclick="deletequestion({{$q->id}})">Delete</button>
             <button class="success-button">Edit</button>
         </div>
         <hr>

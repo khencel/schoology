@@ -14,7 +14,13 @@ class ActivityController extends Controller
     }
 
     public function add($subject_id){
-        $data['subject_id'] = $subject_id;
+        $link = $_SERVER['PHP_SELF'];
+        $link_array = explode('/',$link);
+        $data['activity_id']    = end($link_array);
+        $data['activity']       = (new \App\Services\ActivityServices)->showById($data['activity_id']);
+        $data['questionnaire']  = (new \App\Services\QuestionnaireServices)->showByActivityId($data['activity_id']);
+        $data['subject_id']     = $subject_id;
+        
         return view('page.subject.activity.add',$data);
     }
 

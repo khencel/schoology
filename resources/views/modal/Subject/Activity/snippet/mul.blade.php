@@ -2,22 +2,22 @@
     <div class="row">
         <div class="col-md-6 mb-2">
             <li class="font-text">
-                <input type="text" class="form-control">
+                <input type="text" name="choices[]" class="form-control">
             </li>
         </div>
         <div class="col-md-6 mb-2">
             <li class="font-text">
-                <input type="text" class="form-control">
+                <input type="text" name="choices[]" class="form-control">
             </li>
         </div>
         <div class="col-md-6 mb-2">
             <li class="font-text">
-                <input type="text" class="form-control">
+                <input type="text" name="choices[]" class="form-control">
             </li>
         </div>
         <div class="col-md-6 mb-2">
             <li class="font-text">
-                <input type="text" class="form-control">
+                <input type="text" name="choices[]" class="form-control">
             </li>
         </div>
     </div>
@@ -27,7 +27,7 @@
         <label for="answer font-text">
             <span class="font-text">Answer:</span> 
         </label>
-        <select name="" class="form-control">
+        <select name="mul_answer" class="form-control">
             <option value="" selected hidden>Select Answer:</option>
             <option value="A">A</option>
             <option value="B">B</option>
