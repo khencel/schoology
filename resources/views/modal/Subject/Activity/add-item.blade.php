@@ -7,7 +7,7 @@
         <div class="modal-body auth-modal-body">
             <div class="row">
                 <div class="col-md-4">
-                    <select name="" id="" class="form-control">
+                    <select name="" id="type_question" onchange="selectType()" class="form-control">
                         <option value="" selected hidden>Type of item</option>
                         <option value="mc">Multiple Choice</option>
                         <option value="tf">True or False</option>
@@ -15,12 +15,33 @@
                     </select>
                 </div>
             </div>
+            <div class="row mb-3 mt-3">
+                <div class="col">
+                    <label for="question">
+                        <span class="font-text">Question:</span> 
+                    </label>
+                    <textarea class="tinymce-editor form-control" name="question"></textarea>
+                </div>
+            </div>
+            
+            {{-- snippet here--}}
+            <div id="multiple-choice-cont" class="d-none">
+                @include('modal/Subject/Activity/snippet/mul')
+            </div>
+            <div id="true-false-cont" class="d-none">
+                @include('modal/Subject/Activity/snippet/tf')
+            </div>
+            <div id="essay-cont" class="d-none">
+                @include('modal/Subject/Activity/snippet/essay-inu')
+            </div>
         </div>
+
         <div class="modal-footer">
             <button type="button" class="danger-button" data-bs-dismiss="modal">Close</button>
-            <button type="button" id="btnCreate" class="success-button">Save Item</button>
+            <button type="button" onclick="storeActivity({{$subject_id}})" class="success-button">Save Item</button>
         </div> 
         </div>
     </div>
     </div>
+
 

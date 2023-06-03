@@ -36,20 +36,19 @@
                                 <table class="table table-hover">
                                     <thead>
                                         <th>Title</th>
-                                        <th>test</th>
-                                        <th>test</th>
+                                        <th>Item</th>
                                         <th></th>
                                     </thead>
                                     <tbody>
-                                        @forelse (range(1,10) as $item)
+                                        @forelse ($activity as $a)
                                             <tr>
-                                                <td>title {{$item}}</td>
-                                                <td>test</td>
-                                                <td>test</td>
+                                                <td>title {{$a->title}}</td>
+                                                <td>Item</td>
                                                 <td>
-                                                    <a href="{{ url('/subject/activity/add/'.$item) }}">
-                                                        <span role="button" class="badge bg-info">Edit</span>
+                                                    <a href="{{ url('/subject/activity/add/'.$a->id) }}">
+                                                        <span role="button" class="badge bg-info">View</span>
                                                     </a>
+                                                    <span role="button" class="badge bg-primary" onclick="editActivity({{$a}})">Edit</span>
                                                 </td>
                                             </tr>
                                         @empty
@@ -70,9 +69,10 @@
     </div>
 </div>
 
-@include('modal/Subject/showUpdate')
+@include('modal/Subject/Activity/add')
+@include('modal/Subject/Activity/edit')
 
-<script src="{{ asset('js/Subject/app.js') }}"></script>
+<script src="{{ asset('js/Subject/Activity/app.js') }}"></script>
 <script src="{{ asset('js/services.js') }}"></script>
 @endsection
 

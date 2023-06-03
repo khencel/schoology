@@ -14,5 +14,7 @@ Route::prefix('subject')
         ->group(function(){
             Route::get('/show/{subject_id}','ActivityController@show')->name('show');
             Route::get('/add/{subject_id}','ActivityController@add');
+            Route::post('/store','ActivityController@store');
+            Route::put('/update/{activity_id}','ActivityController@update');
     });
 });
