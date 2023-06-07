@@ -57,6 +57,7 @@
 </div>
 
 @include('modal/Subject/Activity/add-item')
+@include('modal/Subject/Activity/edit-item')
 
 <script src="{{ asset('js/Subject/Activity/app.js') }}"></script>
 <script src="{{ asset('js/services.js') }}"></script>

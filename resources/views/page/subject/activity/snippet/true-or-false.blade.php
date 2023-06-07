@@ -12,7 +12,7 @@
         </p>
         <div class="text-end">
             <button class="danger-button" onclick="deletequestion({{$q->id}})">Delete</button>
-            <button class="success-button">Edit</button>
+            <button class="success-button" onclick="editQuestion({{$q}})">Edit</button>
         </div>
         <hr>
     </div>

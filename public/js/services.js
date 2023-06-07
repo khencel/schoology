@@ -134,9 +134,33 @@ function storeDataForm(form_id){
             window.setInterval(function(){
                 $(form_id).submit();
             },2000)
-            
-            
-          
+        }
+    })
+}
+
+function updateDataForm(form_id){
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You want to update this data?",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, Update it!',
+        buttonsStyling: false,
+        customClass: {
+                confirmButton: "success-button",
+                cancelButton:'danger-button'
+            }
+    }).then((result) => {
+        if (result.isConfirmed) {  
+            Toast.fire({
+                icon: 'success',
+                title: 'Update successfully'
+            })
+            window.setInterval(function(){
+                $(form_id).submit();
+            },2000)
         }
     })
 }

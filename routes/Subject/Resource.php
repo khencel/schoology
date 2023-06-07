@@ -24,6 +24,7 @@ Route::prefix('subject')
                 Route::get('/index','QuestionController');
                 Route::post('/store','QuestionController@store');
                 Route::get('/delete/{question_id}','QuestionController@delete');
+                Route::post('/update','QuestionController@update');
             });
     });
 });

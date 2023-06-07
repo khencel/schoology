@@ -3,6 +3,6 @@
         <label for="answer font-text">
             <span class="font-text">Answer:</span> 
         </label>
-        <textarea class="tinymce-editor form-control d-none" name="essay_answer"></textarea>
+        <textarea class=" form-control" name="essay_answer" id="essay_answer_edit"></textarea>
     </div>
 </div>
