@@ -5,4 +5,5 @@ Route::prefix('auth')
     ->namespace('\App\Http\Controllers\User')
     ->group(function(){
     Route::post('login-user','UserController@loginUser')->name('login');
+    Route::post('register-user','UserController@registerUser');
 });

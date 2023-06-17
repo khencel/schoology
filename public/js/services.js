@@ -129,7 +129,7 @@ function storeDataForm(form_id){
         if (result.isConfirmed) {
             Toast.fire({
                 icon: 'success',
-                title: 'Update successfully'
+                title: 'Create successfully'
             })
             window.setInterval(function(){
                 $(form_id).submit();

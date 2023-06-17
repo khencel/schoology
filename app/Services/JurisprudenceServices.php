@@ -11,8 +11,7 @@ class JurisprudenceServices extends Controller
     public function showAll($year,$month){
         $month = $this->monthConvertionNumber($month);
         return Jurisprudence::whereYear('date_case',$year)
-                                ->whereMonth('date_case',$month)
-                                ->paginate(10);
+                                ->whereMonth('date_case',$month)->get();
     }
 
     public function storeData($data){

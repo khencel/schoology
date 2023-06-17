@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\RegistrationRequest;
 
 class UserController extends Controller
 {
@@ -21,5 +22,9 @@ class UserController extends Controller
             ]);
         }
         return "Opps! You have entered invalid credentials";
+    }
+
+    public function registerUser(RegistrationRequest $registrationRequest){
+        return (new \App\Services\UserServices)->storeData($registrationRequest->all());
     }
 }

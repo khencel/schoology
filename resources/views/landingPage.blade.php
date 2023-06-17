@@ -10,6 +10,7 @@
 <body style="background-image: url('{{ asset('img/background.png') }}')">
     @include('layout/snippet.navigation')
     @include('modal/login')
+    @include('modal/registration')
 </body>
 </html>
 

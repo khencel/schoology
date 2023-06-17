@@ -22,7 +22,10 @@
                 <a class="nav-link font-text" aria-current="page" href="#">Jurisprudence</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link font-text" aria-current="page" href="#">Sign Up</a>
+                <a class="nav-link font-text" role="button" data-bs-toggle="modal" data-bs-target="#registrationModal">Sign Up</a>
+                {{-- <button type="button" class="success-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Sign In
+                </button> --}}
             </li>
             <li class="nav-item">
                 <button type="button" class="success-button" data-bs-toggle="modal" data-bs-target="#exampleModal">

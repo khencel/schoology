@@ -19,7 +19,7 @@
                     </div>
                     <div class="mt-5">
                         <div>
-                            <table class="table table-hover example" style="width:100%">
+                            <table class="table table-hover example" id="case-table" style="width:100%">
                                 <thead>
                                     <tr>
                                         <th>Date Case</th>
@@ -55,13 +55,13 @@
                             </table>
                         </div>
                     </div>
-                    <div class="row justify-content-center">
+                    {{-- <div class="row justify-content-center">
                         <div class="col-3">
                             {{ $jurisprudence->links() }}
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="row justify-content-end mt-5">
-                        <div class="col-md-1">
+                        <div class="col-md-2 text-end">
                             <a href="{{ url('/jurisprudence/index/month?year='.request('year')) }}" style="text-decoration: none" class="w-100 danger-button">Back</a>
                         </div>
                     </div>
@@ -72,6 +72,9 @@
 </div>
 @include('modal/Jurisprudence/add')
 <script src="{{ asset('js/Jurisprudence/add.js') }}"></script>
+<script>
+    $('#case-table').DataTable();
+</script>
 @endsection
 
 
