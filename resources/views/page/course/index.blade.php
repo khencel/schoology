@@ -35,7 +35,7 @@
                                                     </div>  
                                                 </div>
                                                 <div class="col">
-                                                    <i class='bx bxs-graduation cart' ></i>
+                                                    <i class='bx bxs-graduation cart mt-1' ></i>
                                                 </div>
                                             </div>
                                         </div>
