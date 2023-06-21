@@ -8,6 +8,9 @@ use App\Models\Jurisprudence;
 
 class JurisprudenceServices extends Controller
 {
+    public function showAllData(){
+        return Jurisprudence::paginate(10);
+    }
     public function showAll($year,$month){
         $month = $this->monthConvertionNumber($month);
         return Jurisprudence::whereYear('date_case',$year)

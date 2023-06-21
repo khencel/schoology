@@ -4,11 +4,49 @@ namespace App\Http\Controllers\Jurisprudence;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Jurisprudence;
+use Datatables;
 
 class JurisprudenceController extends Controller
 {
-    public function index(){
+    public function jurisprudenceIndex(){
         
+        
+            $data = Jurisprudence::all();
+            return Datatables::of($data)->addIndexColumn()
+                ->addColumn('action', function($row){
+                    $btn = '<a href="123"><div>
+                                <span class="jurisprudence-title">
+                                    <strong>
+                                        '.$row->title.'
+                                    </strong>
+                                </span>
+                                <span class="jurisprudence-case-no">
+                                    '.$row->case_no.'
+                                </span>
+                            </div>
+                            <div>
+                                <span class="text-dark">
+                                '.$row->author.'
+                                </span>
+                                <span class="jurisprudence-case-no">
+                                    <small>
+                                        <strong>
+                                        '.$row->date_case.'
+                                        </strong>
+                                    </small>
+                                </span>
+                            </div>
+                            </a>';
+                    return $btn;
+                })
+            ->rawColumns(['action'])
+            ->make(true);
+        
+
+    }
+
+    public function index(){
         return view('page.jurisprudence.index');
     }
 

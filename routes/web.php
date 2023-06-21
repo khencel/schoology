@@ -17,7 +17,20 @@ Route::get('/', function () {
     return view('landingPage');
 });
 
+Route::get('/jurisprudence', function () {
+    return view('page.guest.jurisprudence');
+});
 
+Route::get('/about-us', function () {
+    return view('page.guest.aboutUS');
+});
+
+Route::get('/privacy-policy', function () {
+    return view('page.guest.policy');
+});
+
+
+Route::get('/sample',[App\Http\Controllers\Jurisprudence\JurisprudenceController::class,'jurisprudenceIndex']);
 
 Auth::routes();
 require __DIR__ .'/User/Auth.php';
