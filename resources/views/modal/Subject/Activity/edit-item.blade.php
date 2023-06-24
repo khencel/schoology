@@ -20,12 +20,31 @@
                 </div>
                 <div class="row mb-3 mt-3">
                     <div class="col">
-                        <label for="question">
-                            <span class="font-text">Question:</span> 
-                        </label>
-                        <textarea class=" form-control" name="question" id="txtQuestion_edit">
-                          
-                        </textarea>
+                        <div class="card p-2" >
+                            <label for="question">
+                                <span class="font-text">Question:</span> 
+                            </label>
+                            <textarea class=" form-control" name="question" id="txtQuestion_edit">
+                            
+                            </textarea>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card p-2" >
+                            <label for="question">
+                                <span class="font-text">Question Bank:</span> 
+                            </label>
+                            <div style="height:400px;overflow-y:auto" class="mt-2">
+                                @foreach ($question_bank as $q)
+                                    <div class="p-2">
+                                        {!!$q->question!!}
+                                    </div>
+                                    <span role="button" class="float-end" onclick="getQuestionBankEdit({{$q}})"><i class="fa-solid fa-square-check fa-2x"></i></span>
+                                    <hr>
+                                @endforeach
+                            </div>
+                        </div>
                     </div>
                 
                 </div>

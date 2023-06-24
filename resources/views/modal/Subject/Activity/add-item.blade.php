@@ -4,10 +4,11 @@
         <div class="modal-dialog  modal-fullscreen" role="document">
             <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="addItem">Create Item</h5>
+                <h5 class="modal-title" id="addItem">Create Itemd</h5>
             </div>
             <div class="modal-body auth-modal-body">
                 <input type="hidden" name="activity_id" value="{{$activity_id}}">
+                
                 <div class="row">
                     <div class="col-md-4">
                         <select name="question_type" id="type_question" onchange="selectType()" class="form-control ">
@@ -20,10 +21,28 @@
                 </div>
                 <div class="row mb-3 mt-3">
                     <div class="col">
-                        <label for="question">
-                            <span class="font-text">Question:</span> 
-                        </label>
-                        <textarea class="tinymce-editor form-control" name="question" id="txtQuestion"></textarea>
+                        <div class="card p-2">
+                            <label for="question">
+                                <span class="font-text">Question:</span> 
+                            </label>
+                            <textarea class="tinymce-editor form-control" name="question" id="txtQuestion"></textarea>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card p-2" >
+                            <label for="question">
+                                <span class="font-text">Question Bank:</span> 
+                            </label>
+                            <div style="height:400px;overflow-y:auto" class="mt-2">
+                                @foreach ($question_bank as $q)
+                                    <div class="p-2">
+                                        {!!$q->question!!}
+                                    </div>
+                                    <span role="button" class="float-end" onclick="getQuestionBank({{$q}})"><i class="fa-solid fa-square-check fa-2x"></i></span>
+                                    <hr>
+                                @endforeach
+                            </div>
+                        </div>
                     </div>
                 
                 </div>

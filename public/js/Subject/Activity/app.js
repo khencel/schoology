@@ -1,6 +1,7 @@
 var activity_id = null;
 var url = window.location.href;
 var question_id = null;
+var question_bank_id = null;
 function btnCreate(subject_id){
     var title = $('#activity_title').val();
     var redirect = "/subject/activity/show/"+subject_id;
@@ -106,6 +107,35 @@ function showType(type){
     }
 }
 
+function storeQuestionBank(){
+    storeDataForm('#formStoreQuestionBank');
+}
+
+function deleteQuestionBank(questionBankId){
+    var url = "/subject/questionBank/delete/"+questionBankId
+    var redirect = "";
+    deleteData(url,redirect);
+}
+
+function viewEditQuestionBank(data){
+    question_bank_id = data.id
+    tinymce.get('txtEditQuestionBank').setContent(data.question)
+    $('#question_bank_id').val(data.id);
+    $('#editQuestionBank').modal('show');
+}
+
+function updateQuestionBank(){
+    var question = tinymce.get('txtEditQuestionBank').getContent()
+    var redirect = "";
+    var url = "/subject/questionBank/update/"+question_bank_id
+
+    data = {
+        question:question
+    }
+
+    updateData(url,data,redirect);
+}
+
 
 function editor(element_id,value){
     tinymce.init({
@@ -115,3 +145,14 @@ function editor(element_id,value){
         }
     });
 }
+
+function getQuestionBank(question){
+    var question = tinymce.get('txtQuestion').setContent(question.question)
+
+    
+}
+
+function getQuestionBankEdit(question){
+    var question = tinymce.get('txtQuestion_edit').setContent(question.question)
+}
+

@@ -18,10 +18,16 @@
       </a>
     </li>
     <li class="log_out">
-      <a href="#">
-        <i class='bx bx-log-out'></i>
+      <a class="nav-link text-dark" href="{{ route('logout') }}"
+      onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+          {{-- {{ __('Logout') }} --}}
+          <i class='bx bx-log-out'></i>
         <span class="links_name">Log out</span>
       </a>
+      <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+          @csrf
+      </form>  
     </li>
   </ul>
   

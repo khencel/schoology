@@ -27,4 +27,12 @@ Route::prefix('subject')
                 Route::post('/update','QuestionController@update');
             });
     });
+
+    Route::prefix('questionBank')
+        ->group(function(){
+            Route::get('/index','QuestionBanckController');
+            Route::post('/store','QuestionBanckController@store');
+            Route::put('/update/{id}','QuestionBanckController@update');
+            Route::get('/delete/{id}','QuestionBanckController@delete');
+    });
 });

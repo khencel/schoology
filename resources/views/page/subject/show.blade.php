@@ -66,6 +66,38 @@
                    </div>
                 </div>
             </div>
+
+
+            <div class="card mb-3" style="background-color: rgba(225,225,225,0.6) !important;backdrop-filter: blur(6px) !important;">
+                <div class="card-body">
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <span class="header-2">Question Bank</span> 
+                        </div>
+                        <div class="col-md-6 text-end">
+                            
+                            <button type="button" class="success-button" data-bs-toggle="modal" data-bs-target="#addQuestionBank">
+                                Create Question
+                            </button>
+                            
+                        </div>
+                    </div>
+                   <div class="mt-2">
+                    
+                        <div class="row">
+                            <div class="col">
+                                <table class="table table-hover" id="tbListOfQuestion">
+                                    <thead>
+                                        <th>Question</th>
+                                        <th>Action</th>
+                                    </thead>
+                                   
+                                </table>
+                            </div>
+                        </div>
+                   </div>
+                </div>
+            </div>
             {{-- @include('page.subject.questionaire_bank') --}}
         </div>
     </div>
@@ -73,6 +105,20 @@
 
 @include('modal/Subject/Activity/add')
 @include('modal/Subject/Activity/edit')
+@include('modal/Subject/QuestionBank/add-question')
+@include('modal/Subject/QuestionBank/edit-question')
+
+<script>
+    $('#tbListOfQuestion').DataTable({
+    processing: true,
+    serverSide: true,
+    ajax: "{{ url('/subject/questionBank/index') }}",
+    columns: [
+        {data: 'action', name: 'action',html:true},
+        {data: 'button', name: 'button',html:true},
+    ]
+});
+</script>
 
 <script src="{{ asset('js/Subject/Activity/app.js') }}"></script>
 <script src="{{ asset('js/services.js') }}"></script>

@@ -18,6 +18,7 @@ class ActivityController extends Controller
         $data['activity']       = (new \App\Services\ActivityServices)->showById($data['activity_id']);
         $data['questionnaire']  = (new \App\Services\QuestionnaireServices)->showByActivityId($data['activity_id']);
         $data['subject_id']     = $subject_id;
+        $data['question_bank'] = (new \App\Services\QuestionBankServices)->showAll();
         
         return view('page.subject.activity.add',$data);
     }
