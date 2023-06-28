@@ -5,7 +5,7 @@
     <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
     @include('layout/snippet.meta')
     @include('layout/snippet.style')
-    <title>Schoology</title>
+    <title>Knowloogy</title>
     @include('layout/snippet.script')
   
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
@@ -460,7 +460,7 @@
   <div class="sidebar">
     <div class="logo-details">
       <i class='bx bxl-c-plus-plus'></i>
-      <span class="logo_name">Schoology</span>
+      <span class="logo_name">Knowloogy</span>
     </div>
     @include('layout/snippet.sidebar')
   </div>
@@ -468,16 +468,17 @@
     <nav>
       <div class="sidebar-button">
         <i class='bx bx-menu sidebarBtn'></i>
-        <span class="dashboard">Dashboard</span>
+        <span class="dashboard">
+          @yield('header')
+        </span>
       </div>
-      <div class="search-box">
+      {{-- <div class="search-box">
         <input type="text" placeholder="Search...">
         <i class='bx bx-search' ></i>
-      </div>
-      <div class="profile-details">
+      </div> --}}
+      <div class="">
         <!--<img src="images/profile.jpg" alt="">-->
-        <span class="admin_name">Prem Shahi</span>
-        <i class='bx bx-chevron-down' ></i>
+        {{ \Auth::user()->name }}
       </div>
     </nav>
 

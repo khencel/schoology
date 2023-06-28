@@ -29,6 +29,8 @@ Route::get('/privacy-policy', function () {
     return view('page.guest.policy');
 });
 
+Route::get('/jurisprudence/show/case/{id}',[App\Http\Controllers\Jurisprudence\JurisprudenceController::class,'showCase']);
+
 
 Route::get('/sample',[App\Http\Controllers\Jurisprudence\JurisprudenceController::class,'jurisprudenceIndex']);
 

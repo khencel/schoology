@@ -15,7 +15,7 @@ class JurisprudenceController extends Controller
             $data = Jurisprudence::all();
             return Datatables::of($data)->addIndexColumn()
                 ->addColumn('action', function($row){
-                    $btn = '<a href="123"><div>
+                    $btn = '<a href="'.url('/jurisprudence/show/case/'.$row->id).'") }}"><div>
                                 <span class="jurisprudence-title">
                                     <strong>
                                         '.$row->title.'
@@ -88,5 +88,10 @@ class JurisprudenceController extends Controller
         $req_data = (new \App\Services\JurisprudenceServices)->showById($id);
         $req_data->delete();
         return $req_data->date_case;
+    }
+
+    public function showCase($jurisprudence_id){
+        $data['jurisprudence'] = (new \App\Services\JurisprudenceServices)->showById($jurisprudence_id);
+        return view('page.guest.show-jurisprudence',$data);
     }
 }

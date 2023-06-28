@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+@section('header')
+    Dashboard
+@endsection
 @section('content')
 @php
     $data = App\Models\Jurisprudence::all();

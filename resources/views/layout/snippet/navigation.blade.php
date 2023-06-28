@@ -21,7 +21,7 @@
                 <a class="nav-link font-text" aria-current="page" href="#">Contact Us</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link font-text {{request()->is('jurisprudence')?'active':''}}" aria-current="page" href="{{ url('/jurisprudence') }}">Jurisprudence</a>
+                <a class="nav-link font-text {{request()->is('jurisprudence*')?'active':''}}" aria-current="page" href="{{ url('/jurisprudence') }}">Jurisprudence</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link font-text" role="button" data-bs-toggle="modal" data-bs-target="#registrationModal">Sign Up</a>
