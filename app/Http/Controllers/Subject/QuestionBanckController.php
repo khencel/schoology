@@ -12,7 +12,9 @@ class QuestionBanckController extends Controller
         $data = (new \App\Services\QuestionBankServices)->showAllForDataTB($subject_id);
         return Datatables::of($data)->addIndexColumn()
             ->addColumn('action', function($row){
-                $html = $row->question;
+              
+                $html =strlen($row->question) > 300 ? substr($row->question,0,300)."..." : $row->question;
+                
                 return $html;
             })->addColumn('button', function($row){
                 $html = '
