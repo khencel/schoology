@@ -109,6 +109,7 @@
 
 <script>
     var subject_id = {{$subject_id}}
+    var course_id = {{$course_id}}
 </script>
 <script>
     $('#tbListOfQuestion').DataTable({

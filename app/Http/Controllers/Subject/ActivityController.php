@@ -41,6 +41,6 @@ class ActivityController extends Controller
     public function delete($subject_id,$activity_id){
         $activity = (new \App\Services\ActivityServices)->showById($activity_id);
         $activity->delete();
-        return redirect()->to('subject/activity/show/'.$subject_id);
+        return redirect()->back();
     }
 }

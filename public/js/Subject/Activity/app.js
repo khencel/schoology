@@ -5,7 +5,7 @@ var question_id = null;
 var question_bank_id = null;
 function btnCreate(subject_id){
     var title = $('#activity_title').val();
-    var redirect = "/subject/activity/show/"+subject_id;
+    var redirect = "/subject/activity/show/"+course_id+'/'+subject_id;
     var url = "/subject/activity/store"
     data = {
         subject_id:subject_id,
