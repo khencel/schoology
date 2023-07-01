@@ -25,6 +25,10 @@ Route::get('/about-us', function () {
     return view('page.guest.aboutUS');
 });
 
+Route::get('/contact-us', function () {
+    return view('page.guest.contactUS');
+});
+
 Route::get('/privacy-policy', function () {
     return view('page.guest.policy');
 });

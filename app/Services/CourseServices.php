@@ -9,7 +9,7 @@ use App\Models\Course;
 class CourseServices extends Controller
 {
     public function showAll(){
-       return Course::all();
+       return Course::with('subject')->get();
     }
 
     public function storeData($data){

@@ -8,8 +8,8 @@ use Datatables;
 
 class QuestionBanckController extends Controller
 {
-    public function __invoke(){
-        $data = (new \App\Services\QuestionBankServices)->showAllForDataTB();
+    public function __invoke($subject_id){
+        $data = (new \App\Services\QuestionBankServices)->showAllForDataTB($subject_id);
         return Datatables::of($data)->addIndexColumn()
             ->addColumn('action', function($row){
                 $html = $row->question;

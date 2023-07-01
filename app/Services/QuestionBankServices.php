@@ -12,8 +12,8 @@ class QuestionBankServices extends Controller
        return QuestionBank::all();
     }
 
-    public function showAllForDataTB(){
-        return QuestionBank::select('id','question')->get();
+    public function showAllForDataTB($subject_id){
+        return QuestionBank::select('id','question')->where('subject_id',$subject_id)->get();
      }
 
     public function storeData($data){
@@ -22,5 +22,9 @@ class QuestionBankServices extends Controller
 
     public function showById($id){
         return QuestionBank::find($id);
+    }
+
+    public function showBySubjectId($subject_id){
+        return QuestionBank::where('subject_id',$subject_id)->get();
     }
 }

@@ -185,7 +185,7 @@
                   animation-play-state: running !important;
                 }
               </style>
-              <script>window.setTimeout = null;</script>
+              {{-- <script>window.setTimeout = null;</script> --}}
               
                     
                 

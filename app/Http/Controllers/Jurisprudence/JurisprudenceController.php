@@ -79,9 +79,9 @@ class JurisprudenceController extends Controller
 
     public function update(Request $request,$id){
         $req_data = (new \App\Services\JurisprudenceServices)->showById($id);
-        $req_data->update($request->all());
+        $req_data->update($request->except(['year','month']));
 
-        return redirect()->back();
+        return redirect()->to('/jurisprudence/index/month/case?year='.request('year').'&month='.request('month'));
     }
 
     public function delete($id){

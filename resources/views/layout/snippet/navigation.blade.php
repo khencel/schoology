@@ -18,7 +18,7 @@
                 <a class="nav-link font-text {{request()->is('privacy-policy')?'active':''}}" aria-current="page" href="{{ url('/privacy-policy') }}">Privacy Policy</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link font-text" aria-current="page" href="#">Contact Us</a>
+                <a class="nav-link font-text {{request()->is('contact-us')?'active':''}}" aria-current="page" href="{{ url('/contact-us') }}">Contact Us</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link font-text {{request()->is('jurisprudence*')?'active':''}}" aria-current="page" href="{{ url('/jurisprudence') }}">Jurisprudence</a>

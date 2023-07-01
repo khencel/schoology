@@ -9,7 +9,11 @@
                     <div class="row justify-content-end">
                         <div class="col-6 text-end ">
                             <small>
-                                <span class="font-text">Course</span>
+                                <span class="font-text" role="button" onclick="event.preventDefault(); window.location = '/course/index'">Course</span>
+                                /
+                                <span class="font-text" role="button" onclick="event.preventDefault(); window.location = '/subject/index/{{$course_id}}'">Subject</span>
+                                /
+                                <span class="font-text" role="button" onclick="event.preventDefault(); window.location = '/subject/activity/show/{{$course_id}}/{{$subject}}'">Activity</span>
                                 /
                                 <span class="">Subject</span>
                             </small>

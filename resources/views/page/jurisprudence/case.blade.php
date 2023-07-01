@@ -37,7 +37,7 @@
                                             <td>{{$j->case_no}}</td>
                                             <td>{{$j->author}}</td>
                                             <td>
-                                                <a href="/jurisprudence/show/{{$j->case_no}}">
+                                                <a href="/jurisprudence/show/{{$j->case_no."?year=".request('year')."&month=".request('month')}}">
                                                     <span role="button">
                                                         <i class="fa-solid fa-eye"></i>
                                                     </span>

@@ -10,11 +10,10 @@
                     <div class="row justify-content-end">
                         <div class="col-6 text-end ">
                             <small>
-                                <span class="font-text">Course</span>
+                                <span class="font-text" role="button" onclick="event.preventDefault(); window.location = '/course/index'">Course</span>
                                 /
                                 <span class="">Subject</span>
                             </small>
-                            
                         </div>
                     </div>
                     <div class="row mt-3">
@@ -33,7 +32,7 @@
                                 <div class="col-md-3">
                                     <div class="row bg-white list-cont p-3" role="button" style="margin:1px">
                                         <div class="col-9 text-center" style="border-right:1px solid gray;">
-                                            <a href="{{ url('/subject/activity/show/'.$s->id) }}">
+                                            <a href="{{ url('/subject/activity/show/'.$course_id.'/'.$s->id) }}">
                                                 <img src="{{ url('/img/books.png') }}" class="img-fluid" alt="">
                                                 <strong class="font-text">
                                                     {{$s->subject_name}}

@@ -12,10 +12,11 @@ Route::prefix('subject')
 
     Route::prefix('activity')
         ->group(function(){
-            Route::get('/show/{subject_id}','ActivityController@show')->name('show');
-            Route::get('/add/{subject_id}','ActivityController@add');
+            Route::get('/show/{course_id}/{subject_id}','ActivityController@show')->name('show');
+            Route::get('/add/{subject_id}/{course_id}/{subject}','ActivityController@add');
             Route::post('/store','ActivityController@store');
             Route::put('/update/{activity_id}','ActivityController@update');
+            Route::get('/delete/{subject_id}/{activity_id}','ActivityController@delete');
 
 
             Route::prefix('questionnaire')
@@ -30,7 +31,7 @@ Route::prefix('subject')
 
     Route::prefix('questionBank')
         ->group(function(){
-            Route::get('/index','QuestionBanckController');
+            Route::get('/index/{subject_id}','QuestionBanckController');
             Route::post('/store','QuestionBanckController@store');
             Route::put('/update/{id}','QuestionBanckController@update');
             Route::get('/delete/{id}','QuestionBanckController@delete');

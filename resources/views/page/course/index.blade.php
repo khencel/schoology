@@ -28,7 +28,8 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col">
-                                                    <div class="number text-dark">{{number_format(1231)}}</div>
+                                                    
+                                                    <div class="number text-dark">{{number_format(count($c->subject))}}</div>
                                                     <div class="indicator">
                                                         <i class='bx bx-up-arrow-alt'></i>
                                                         <span class="text text-dark">Subject</span>

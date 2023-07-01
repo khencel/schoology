@@ -81,7 +81,7 @@ function btnDelete(subject_id){
                 
                 Toast.fire({
                     icon: 'success',
-                    title: 'Signed in successfully'
+                    title: 'Deleted successfully'
                 })
             })
         }

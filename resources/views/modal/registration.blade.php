@@ -4,13 +4,13 @@
     <div class="modal-dialog modal-dialog-centered">
         
         @csrf
-            <div class="modal-content default-bg-modal">
+            <div class="modal-content default-bg-modal" style="background: #ffffffad !important">
                 <div class="modal-header" style="border-bottom:none !important">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 
                 <div class="modal-body">
-                    <div class="header-2 text-center">Sign Up</div>
+                    <div class="header-1 text-center">Sign Up</div>
 
                     <div class="card-body">
                             <div class="row mb-3 justify-content-center">

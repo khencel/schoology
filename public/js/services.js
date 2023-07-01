@@ -59,7 +59,6 @@ function deleteData(url,redirect_page){
                 url: url,
                 type:'GET',
             }).done(function(res){
-                console.log(res);
                 window.setInterval(function(){
                     window.location = redirect_page
                 },2000)

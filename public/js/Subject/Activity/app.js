@@ -1,3 +1,4 @@
+
 var activity_id = null;
 var url = window.location.href;
 var question_id = null;
@@ -42,8 +43,8 @@ function btnEdit(subject_id){
     }
 }
 
-function viewQuestionnaire(selected_activity){
-    window.location = "/subject/activity/add/"+selected_activity
+function viewQuestionnaire(selected_activity,course_id,subject){
+    window.location = "/subject/activity/add/"+selected_activity+'/'+course_id+'/'+subject
     this.activity_id = selected_activity;
 }
 
@@ -148,11 +149,15 @@ function editor(element_id,value){
 
 function getQuestionBank(question){
     var question = tinymce.get('txtQuestion').setContent(question.question)
-
-    
 }
 
 function getQuestionBankEdit(question){
     var question = tinymce.get('txtQuestion_edit').setContent(question.question)
+}
+
+function deleteActivity(activity_id){
+    var url = "/subject/activity/delete/"+subject_id+'/'+activity_id
+    var redirect = "";
+    deleteData(url,redirect);
 }
 

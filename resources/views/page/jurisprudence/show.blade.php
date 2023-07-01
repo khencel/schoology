@@ -15,6 +15,8 @@
                             <span class="header-2">{{$jurisprudence->title}}</span> 
                         </div>
                         <div class="col-md-6 text-end">
+                            <input type="hidden" value="{{request('year')}}" name="year">
+                            <input type="hidden" value="{{request('month')}}" name="month">
                             <button type="button" id="btnUpdate" class="success-button">
                                 Update
                             </button>
@@ -23,7 +25,7 @@
                             </button>
                         </div>
                     </div>
-                
+                    
                    <div class="row mt-5">
                         <div class="col-md-5">
                             <input type="text" name="title" placeholder="Title Case" value="{{$jurisprudence->title}}" class="form-control">

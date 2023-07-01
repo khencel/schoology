@@ -9,9 +9,9 @@
                     <div class="row justify-content-end">
                         <div class="col-6 text-end ">
                             <small>
-                                <span class="font-text">Course</span>
+                                <span class="font-text" role="button" onclick="event.preventDefault(); window.location = '/course/index'">Course</span>
                                 /
-                                <span class="">Subject</span>
+                                <span class="font-text" role="button" onclick="event.preventDefault(); window.location = '/subject/index/{{$course_id}}'">Subject</span>
                                 /
                                 <span class="">Activity</span>
                             </small>
@@ -23,7 +23,6 @@
                             <span class="header-2">Activity</span> 
                         </div>
                         <div class="col-md-6 text-end">
-                            
                             <button type="button" class="success-button" data-bs-toggle="modal" data-bs-target="#addActivity">
                                 Create Activity
                             </button>
@@ -31,7 +30,6 @@
                         </div>
                     </div>
                    <div class="mt-2">
-                    
                         <div class="row">
                             <div class="col">
                                 <table class="table table-hover">
@@ -49,8 +47,9 @@
                                                     {{-- <a href="{{ url('/subject/activity/add/activity_id='.$a->id) }}">
                                                         <span role="button" class="badge bg-info">View</span>
                                                     </a> --}}
-                                                    <span role="button" class="badge bg-info" onclick="viewQuestionnaire({{$a->id}})">View</span>
+                                                    <span role="button" class="badge bg-info" onclick="viewQuestionnaire({{$a->id}},{{$course_id}},{{$subject_id}})">View</span>
                                                     <span role="button" class="badge bg-primary" onclick="editActivity({{$a}})">Edit</span>
+                                                    <span role="button" class="badge bg-danger" onclick="deleteActivity({{$a->id}})">Delete</span>
                                                 </td>
                                             </tr>
                                         @empty
@@ -109,10 +108,13 @@
 @include('modal/Subject/QuestionBank/edit-question')
 
 <script>
+    var subject_id = {{$subject_id}}
+</script>
+<script>
     $('#tbListOfQuestion').DataTable({
     processing: true,
     serverSide: true,
-    ajax: "{{ url('/subject/questionBank/index') }}",
+    ajax: "{{ url('/subject/questionBank/index/'.$subject_id) }}",
     columns: [
         {data: 'action', name: 'action',html:true},
         {data: 'button', name: 'button',html:true},
