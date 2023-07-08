@@ -56,6 +56,7 @@ class JurisprudenceController extends Controller
     }
 
     public function caseList(){
+        
         $data['jurisprudence'] = (new \App\Services\JurisprudenceServices)->showAll(request('year'),request('month'));
         return view('page.jurisprudence.case',$data);
     }
@@ -73,7 +74,9 @@ class JurisprudenceController extends Controller
     }
 
     public function show($case_no){
-        $data['jurisprudence'] = (new \App\Services\JurisprudenceServices)->showCaseByCaseNo($case_no);
+        $month = (new \App\Services\JurisprudenceServices)->monthConvertionNumber(request('month'));
+        $year = request('year');
+        $data['jurisprudence'] = (new \App\Services\JurisprudenceServices)->showCaseByCaseNo($case_no,$month,$year);
         return view('page.jurisprudence.show',$data);
     }
 

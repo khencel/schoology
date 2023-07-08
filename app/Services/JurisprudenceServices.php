@@ -21,8 +21,11 @@ class JurisprudenceServices extends Controller
         return Jurisprudence::create($data);
     }
 
-    public function showCaseByCaseNo($case_no){
-        return Jurisprudence::where('case_no',$case_no)->first();
+    public function showCaseByCaseNo($case_no,$month,$year){
+        return Jurisprudence::where('case_no',$case_no)
+                            ->whereMonth('date_case',$month)
+                            ->whereYear('date_case',$year)
+                            ->first();
     }
 
     public function showById($id){
