@@ -24,6 +24,7 @@
         $('#jurisprudence').DataTable({
             processing: true,
             serverSide: true,
+            pageLength: 50, 
             ajax: "{{ url('/sample') }}",
             columns: [
                 {data: 'action', name: 'action'},

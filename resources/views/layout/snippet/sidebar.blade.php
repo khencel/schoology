@@ -14,7 +14,21 @@
     <li>
       <a href="{{ url('course/index') }}" class="{{request()->is('course/*')?'active':''}}">
         <i class='bx bx-box' ></i>
-        <span class="links_name">Course</span>
+        <span class="links_name">
+          <small>
+            Course
+          </small>
+        </span>
+      </a>
+    </li>
+    <li>
+      <a href="{{ url('/penal-code/books') }}" class="{{request()->is('penal-code/*')?'active':''}}">
+        <i class='bx bx-box' ></i>
+        <span class="links_name">
+          <small>
+            The Revised Penal Code
+          </small>
+        </span>
       </a>
     </li>
     <li class="log_out">

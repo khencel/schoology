@@ -47,6 +47,7 @@ Route::group( ['middleware' => 'auth' ], function()
     require __DIR__ .'/Jurisprudence/Resource.php';
     require __DIR__ .'/Course/Resource.php';
     require __DIR__ .'/Subject/Resource.php';
+    require __DIR__ .'/Penal-code/Resource.php';
 });
 
 Route::get('/migrate', function() {
