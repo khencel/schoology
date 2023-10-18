@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateQuestionnairesTable extends Migration
+class CreateTrueOrFalsesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,13 @@ class CreateQuestionnairesTable extends Migration
      */
     public function up()
     {
-        Schema::create('questionnaires', function (Blueprint $table) {
+        Schema::create('true_or_false', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('activity_id');
+            $table->integer('parent_id');
+            $table->string('model');
             $table->text('question');
-            $table->text('choices')->nullable();
-            $table->text('answer');
-            $table->text('question_type');
+            $table->boolean('answer');
             $table->timestamps();
-            $table->foreign('activity_id')->references('id')->on('activities')->onDelete('cascade');
         });
     }
 
@@ -32,6 +30,6 @@ class CreateQuestionnairesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('questionnaires');
+        Schema::dropIfExists('true_or_false');
     }
 }

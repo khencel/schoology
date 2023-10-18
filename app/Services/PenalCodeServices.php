@@ -9,7 +9,7 @@ use App\Models\Book;
 class PenalCodeServices extends Controller
 {
     public function showAll(){
-       return Book::all();
+       return Book::with('title.chapter.section')->get();
     }
 
     // public function storeData($data){
